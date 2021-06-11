@@ -9,12 +9,12 @@ module.exports = {
     // basic site info (required)
     name: "Alice Shaughnessy",
     domain: 'alicecshocks.com',
-    author: "Alice Shaugnessy",
+    author: "Alice Shaughnessy",
 
     // open graph metadata (optional)
-    description: "Alice Shaughnessy | Boo",
+    description: "Alice Shaughnessy | Engineer, Creator and Adventurer",
     socialImageTitle: "AliceShaughnessy",
-    socialImageSubtitle: 'I build stuff',
+    socialImageSubtitle: 'I build some cool stuff',
 
     // social usernames (optional)
     twitter: 'AliceShaugh',
