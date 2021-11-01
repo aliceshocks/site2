@@ -1,26 +1,26 @@
 module.exports = {
     // where it all starts -- the site's root Notion page (required)
-    rootNotionPageId: '7992ab56634e4c0181be4d6b8d1d9064',
+    rootNotionPageId: 'e30660ff57944cef97b5f448aaa47d7f',
 
     // if you want to restrict pages to a single notion workspace (optional)
-    // (this should be a Notion ID;     see the docs for how to extract this)
+    // (this should be a Notion ID; see the docs for how to extract this)
     rootNotionSpaceId: null,
 
     // basic site info (required)
     name: "Alice Shaughnessy",
-    domain: 'alicecshocks.com',
+    domain: 'aliceshocks.com',
     author: "Jack O'Regan Kenny",
 
     // open graph metadata (optional)
-    description: "Alice Shaughnessy",
-    socialImageTitle: "AliceShaughnessy",
+    description: "Hi I'm Alice and I build things",
+    socialImageTitle: "Alice Shocks",
     socialImageSubtitle: 'I build stuff',
 
     // social usernames (optional)
     twitter: 'AliceShaugh',
     github: '',
     linkedin: 'aliceshaughnessy',
-    email: 'mailto:shocks.alice@gmail.com',
+    email: 'mailto:jackoregankenny@gmail.com',
 
     // default notion icon and cover images for site-wide consistency (optional)
     // page-specific values will override these site-wide defaults
