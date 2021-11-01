@@ -9,10 +9,17 @@ module.exports = {
     // basic site info (required)
     name: "Alice Shaughnessy",
     domain: 'alicecshocks.com',
+<<<<<<< HEAD
     author: "Jack O'Regan Kenny",
 
     // open graph metadata (optional)
     description: "Alice Shaughnessy",
+=======
+    author: "Alice Shaugnessy",
+
+    // open graph metadata (optional)
+    description: "Alice Shaughnessy | Boo",
+>>>>>>> parent of 31f366c (Update site.config.js)
     socialImageTitle: "AliceShaughnessy",
     socialImageSubtitle: 'I build stuff',
 
