@@ -9,7 +9,7 @@ import BodyClassName from 'react-body-classname'
 import useDarkMode from 'use-dark-mode'
 import { PageBlock } from 'notion-types'
 
-import { Tweet, TwitterContextProvider } from 'react-static-tweets'
+import { Tweet, Twitter } from 'react-static-tweets'
 
 // core notion renderer
 import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
@@ -26,6 +26,7 @@ import * as config from 'lib/config'
 
 // components
 import { CustomFont } from './CustomFont'
+import { CustomHtml } from './CustomHtml'
 import { Loading } from './Loading'
 import { Page404 } from './Page404'
 import { PageHead } from './PageHead'
@@ -52,12 +53,7 @@ import styles from './styles.module.css'
 //   }
 // )
 
-// TODO: PDF support via "react-pdf" package has numerous troubles building
-// with next.js
-// const Pdf = dynamic(
-//   () => import('react-notion-x').then((notion) => notion.Pdf),
-//   { ssr: false }
-// )
+const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
 const Equation = dynamic(() =>
   import('react-notion-x').then((notion) => notion.Equation)
@@ -131,10 +127,11 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
 
-  const socialImage = mapNotionImageUrl(
-    (block as PageBlock).format?.page_cover || config.defaultPageCover,
-    block
-  )
+  const socialImage =
+    mapNotionImageUrl(
+      (block as PageBlock).format?.page_cover || config.defaultPageCover,
+      block
+    ) || config.api.renderSocialImage(pageId)
 
   const socialDescription =
     getPageDescription(block, recordMap) ?? config.description
@@ -164,7 +161,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   return (
-    <TwitterContextProvider
+    <Twitter.Provider
       value={{
         tweetAstMap: (recordMap as any).tweetAstMap || {},
         swrOptions: {
@@ -254,6 +251,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
           collectionRow: CollectionRow,
           tweet: Tweet,
           modal: Modal,
+          pdf: Pdf,
           equation: Equation
         }}
         recordMap={recordMap}
@@ -280,7 +278,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
         }
       />
 
-      <GitHubShareButton />
-    </TwitterContextProvider>
+      
+
+      <CustomHtml site={site} />
+    </Twitter.Provider>
   )
 }
