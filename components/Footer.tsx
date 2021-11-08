@@ -77,12 +77,7 @@ export const Footer: React.FC<{
           </a>
         )}
         </div>
-     <div className={styles.settings}>
-          <a href="https://www.producthunt.com/posts/spreag?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-spreag" target="_blank">
-          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=318983&theme=light" 
-           alt="Spreag - Database of STEM competitions and programmes | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-        
-      </div>
+     
     </footer>
   )
 }
